@@ -6,15 +6,26 @@ int
 main(int argc,
      char **argv)
 {
-    if (argc == 1 || argv[1][0] == 'h')
-        printf(happy);
-    else if (argv[1][0] == 't')
-        printf(trollge);
-    else if (argv[1][0] == 'c')
-        printf(creepypasta);
-    else if (argv[1][0] == 'f' | argv[1][0] == 'g')
-        printf(front);
-    else
-        printf("Usage: trollface [h(appy)|t(rollge)|c(reepypasta)|f(ront)]\nPrints a trollface to the console.");
-    exit(0);
+    if(argc==1) printf(happy);
+    else{
+        switch(argv[1][0]){
+            case 'h':
+                printf(happy);
+                break;
+            case 't':
+                printf(trollge);
+                break;
+            case 'c':
+                printf(creepypasta);
+                break;
+            case 'f':
+            case 'g':
+                printf(front);
+                break;
+            default:
+                printf("Usage: trollface [h(appy)|t(rollge)|c(reepypasta)|f(ront)]\nPrints a trollface to the console.");
+                break;
+        }
+    }
+    return 0;
 }
